@@ -9,14 +9,26 @@ import { decrement, increment } from '../store/counter.actions';
   standalone: true,
 })
 export class CounterControlsComponent {
+  private intervalId: any;
+
   constructor(private store: Store) {}
 
-  increment() {
-    // this.store.dispatch(new IncrementAction(2));
-    this.store.dispatch(increment({ value: 1 }));
+  startIncrement(): void {
+    this.store.dispatch(increment({ value: 1 })); // immediate first dispatch
+    this.intervalId = setInterval(() => {
+      this.store.dispatch(increment({ value: 1 }));
+    }, 100); 
   }
 
-  decrement() {
+  startDecrement(): void {
     this.store.dispatch(decrement({ value: 1 }));
+    this.intervalId = setInterval(() => {
+      this.store.dispatch(decrement({ value: 1 }));
+    }, 100);
+  }
+
+  stopCounting(): void {
+    clearInterval(this.intervalId);
+    this.intervalId = null;
   }
 }
