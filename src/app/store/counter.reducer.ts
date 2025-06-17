@@ -1,5 +1,4 @@
 import { createReducer, on } from '@ngrx/store';
-import { increment } from './counter.actions';
 
 const initialState = 0; // It can be anything (object, array, ...)
 
