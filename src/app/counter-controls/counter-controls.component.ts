@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { decrement, increment } from '../store/counter.actions';
+import { RippleDirective } from '../ripple.directive';
 
 @Component({
   selector: 'app-counter-controls',
   templateUrl: './counter-controls.component.html',
   styleUrls: ['./counter-controls.component.css'],
   standalone: true,
+  imports: [RippleDirective]
 })
 export class CounterControlsComponent {
   private intervalId: any;

@@ -1,2 +1,12 @@
-<p class="counter">{{ count$ | async }}</p>
-<p class="counter">Double: {{ doubleCount$ | async }}</p>
+<div class="counter-container">
+  <div>
+    <div class="counter-label">Current Value</div>
+    <p class="counter" [class.pulse]="pulse" [class.changed]="changed">
+      {{ count$ | async }}
+    </p>
+  </div>
+  <div>
+    <div class="counter-label">Double Value</div>
+    <p class="counter">{{ doubleCount$ | async }}</p>
+  </div>
+</div>
