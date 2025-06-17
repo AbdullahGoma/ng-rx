@@ -1,15 +1,19 @@
 <div id="buttons">
-  <button 
-    (mousedown)="startDecrement()" 
-    (mouseup)="stopCounting()" 
-    (mouseleave)="stopCounting()">
+  <button
+    appRipple
+    (mousedown)="startDecrement()"
+    (mouseup)="stopCounting()"
+    (mouseleave)="stopCounting()"
+  >
     Decrement
   </button>
 
-  <button 
-    (mousedown)="startIncrement()" 
-    (mouseup)="stopCounting()" 
-    (mouseleave)="stopCounting()">
+  <button
+    appRipple
+    (mousedown)="startIncrement()"
+    (mouseup)="stopCounting()"
+    (mouseleave)="stopCounting()"
+  >
     Increment
   </button>
 </div>
