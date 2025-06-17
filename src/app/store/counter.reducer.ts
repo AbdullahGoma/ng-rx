@@ -1,13 +1,13 @@
-import { createReducer, on } from "@ngrx/store";
-import { increment } from "./counter.actions";
+import { createReducer, on } from '@ngrx/store';
+import { increment } from './counter.actions';
 
 const initialState = 0; // It can be anything (object, array, ...)
 
 export const counterReducer = createReducer(
-    initialState,
-    on(increment, (state) => state + 1)
+  initialState,
+  on(increment, (state, action) => state + action.value)
 );
 
 // export function counterReducer(state = initialState) {
 //     return state;
-// } 
+// }
